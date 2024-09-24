@@ -1,0 +1,12 @@
+###查询订单
+GET  http://127.0.0.1:5000/orders/
+Content-Type: application/json
+
+###根据iD查询订单
+GET  http://127.0.0.1:5000/order/3/
+Content-Type: application/json
+
+
+###根据iD查询物流信息
+GET  http://127.0.0.1:5000/express/3/
+Content-Type: application/json

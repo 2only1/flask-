@@ -1,0 +1,56 @@
+
+### 测试用户登录功能
+POST http://127.0.0.1:5000/user/login/
+Content-Type: application/json
+
+{
+    "name":"baizhan",
+    "pwd":"123456"
+}
+
+
+### 测试用户注册功能
+POST http://127.0.0.1:5000/user/users/
+Content-Type: application/json
+
+{
+    "name":"liubei",
+    "pwd":"123",
+    "real_pwd":"123",
+    "email":"999@qq.com",
+    "phone":"18803181117",
+    "nick_name":"刘备",
+    "role_id":6
+}
+
+###测试登录装饰器是否有用
+GET http://127.0.0.1:5000/user/test/
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzI1MTgxNDQ3LjUwMjc4M30.Z_YQweUKByuW4ejH2YikQb75FT8RgYJk-YJ1xqZDlbs
+
+###测试获取菜单
+GET http://127.0.0.1:5000/menu/menus/?type_=tree
+
+###测试获取用户列表
+GET http://127.0.0.1:5000/user/user/2
+
+
+###测试获取用户列表
+GET http://127.0.0.1:5000/user/users/
+
+###测试修改用用户信息功能
+PUT http://127.0.0.1:5000/user/user/2/
+Content-Type: application/json
+
+{
+    "email":"222@qq.com",
+    "phone":"18803181117",
+    "nick_name":"吕小布",
+    "role_id":1
+}
+
+###测试删除用户功能
+DELETE http://127.0.0.1:5000/user/user/2/
+
+
+###测试用户重置密码是否生效
+GET http://127.0.0.1:5000/user/reset_pwd/7/

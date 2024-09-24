@@ -1,0 +1,76 @@
+###获取商品列表
+GET http://127.0.0.1:5000/products/
+Accept: application/json
+
+###获取单个商品
+GET http://127.0.0.1:5000/products/?name=SOULKISS
+Accept: application/json
+
+###删除商品
+DELETE http://127.0.0.1:5000/product/6/
+
+###上传图片
+POST http://127.0.0.1:5000/upload_img/
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="111.py"
+Content-Type: image/png
+
+< ../111.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+
+###添加商品
+POST http://127.0.0.1:5000/products/
+Content-Type: application/json
+
+{
+  "name": "纤纤连衣裙",
+  "price": 999.99,
+  "number" : 200,
+  "weight" : 10,
+  "introduce" :"这是新款连衣裙",
+  "cid_one" : 1,
+  "cid_two" : 17,
+  "cid_three" : 68,
+  "pics" : ["111.png", "222.png"],
+  "attr_static" : [
+    {"id":1,"name":"品牌", "val":"soulkiss","_type":"static"},
+    {"id":2,"name":"适用年龄","val":"25-29周岁","_type":"static"}
+  ],
+  "attr_dynamic" : [
+    {"id":22,"name":"颜色分类", "val":["红色","白色"],"_type":"dynamic"},
+    {"id":21,"name":"尺码","val":["S","M","L"],"_type":"dynamic"}
+  ]
+}
+
+
+###添加商品
+POST http://127.0.0.1:5000/products/
+Content-Type: application/json
+
+{
+  "name": "纤纤连衣裙",
+  "price": 999.99,
+  "number" : 200,
+  "weight" : 10,
+  "introduce" :"这是新款连衣裙",
+  "cid_one" : 1,
+  "cid_two" : 17,
+  "cid_three" : 68,
+  "pics" : ["111.png", "222.png"],
+}
+
+
+###更新商品
+PUT http://127.0.0.1:5000/products/1
+Content-Type: application/json
+
+{
+  "name": "iPhone 13 Pro",
+  "description": "Apple's latest flagship smartphone",
+  "price": 1099.99
+}

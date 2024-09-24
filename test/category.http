@@ -1,0 +1,18 @@
+###增加商品分类
+POST http://127.0.0.1:5000/categorys/
+Content-Type: application/json
+
+{
+    "name": "小米手机",
+    "pid": 28,
+    "level":3
+}
+
+
+###获取商品分类列表
+GET http://127.0.0.1:5000/categorys/?level=3
+Content-Type: application/json
+
+
+###获取商品分类列表
+GET http://127.0.0.1:5000/cate_grup/

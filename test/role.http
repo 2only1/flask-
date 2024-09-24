@@ -1,0 +1,36 @@
+###获取角色列表
+GET http://127.0.0.1:5000/roles/
+
+###增加角色
+POST http://127.0.0.1:5000/roles/
+Content-Type: application/json
+
+{
+    "name": "普通用户",
+    "desc": ""
+}
+
+###删除角色
+DELETE http://127.0.0.1:5000/role/4
+Content-Type: application/json
+
+###修改数据
+PUT http://127.0.0.1:5000/role/6
+Content-Type: application/json
+
+{
+    "name": "普通用户",
+    "desc": "普通注册用户"
+}
+
+###删除角色某一权限
+GET http://127.0.0.1:5000/role/6/11/
+
+
+###添加角色权限
+POST http://127.0.0.1:5000/role/6/
+Content-Type: application/json
+
+{
+    "mids": "2,21"
+}

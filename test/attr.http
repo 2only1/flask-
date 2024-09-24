@@ -1,0 +1,32 @@
+#增加分类属性
+
+POST http://127.0.0.1:5000/attributes/
+Content-Type: application/json
+
+{
+  "name": "颜色",
+  "_type": "dynamic",
+  "val" : "红色,酒红,蓝灰",
+  "cid" : 82
+}
+
+###查询分类属性
+GET http://localhost:5000/attributes/?cid=65&_type=static
+
+
+
+###根据属性id获取单个分类属性
+GET http://localhost:5000/attribute/17/
+
+
+###据属性id修改分类属性
+PUT http://localhost:5000/attribute/24/
+Content-Type: application/json
+
+{
+  "val" : "test111"
+}
+
+###根据属性id删除分类属性
+DELETE http://localhost:5000/attribute/24/
+Content-Type: application/json
